@@ -1,0 +1,26 @@
+﻿{
+  "name": "LinkedIn ProfileChanger",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Change LinkedIn profile pictures to a single image.",
+  "permissions": ["scripting", "storage", "activeTab"],
+  "host_permissions": ["https://www.linkedin.com/"],
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_title": "LinkedIn ProfileChanger",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "twt_extension.png"
+    }
+  }
+}
